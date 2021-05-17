@@ -1,0 +1,16 @@
+<row
+  cdkDropList
+  (cdkDropListDropped)="drop($event)"
+  cdkDropListOrientation="horizontal"
+  *ngFor="let row of rows; let i = index"
+>
+  <tile
+    *ngFor="let tile of row.tiles; let i = index"
+    [config]="tile"
+    [index]="i"
+    [ngStyle]="{
+      'background-image': tile.backgroundImage
+    }"
+    cdkDrag
+  ></tile>
+</row>
